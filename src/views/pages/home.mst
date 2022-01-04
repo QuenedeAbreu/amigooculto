@@ -1,0 +1,16 @@
+{{>header}}
+<h1>Teste de Mustache e nodemon</h1>
+<ul>
+  {{#users}}
+  <li>{{id}} - {{name}} - {{age}}</li>
+  {{/users}}
+</ul>
+
+<hr />
+<ul>
+  {{#unicUser}}
+  <li>{{id}} - {{name}} - {{age}}</li>
+  {{/unicUser}}
+</ul>
+
+{{>footer}}

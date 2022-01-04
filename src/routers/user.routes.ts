@@ -1,10 +1,9 @@
-import { Router, Request, Response } from 'express';
+import { Router } from 'express';
+
+import * as  UserController from '../controllers/userController';
 
 const user = Router();
-user.get('/', (req: Request, res: Response) => {
-  req
-  res.send('User');
-})
+user.get('/', UserController.user)
 
 
 export default user;

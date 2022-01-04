@@ -1,14 +1,9 @@
-import { Router, Request, Response } from 'express';
-
+import { Router } from 'express';
 const home = Router();
-home.get('/', (req: Request, res: Response) => {
-  req
-  res.json({
-    message: 'Welcome to the home page',
-    name: 'Home',
-    author: 'Quenede Abreu',
-  });
-})
+import * as HomeController from '../controllers/homeController';
+
+
+home.get('/', HomeController.home)
 
 
 export default home;
