@@ -20,7 +20,7 @@
   {{^title}}
   <legend>Formulário de novos usuários</legend>
   {{/title}}
-  <form action="/user/novousuario" method="post">
+  <form action="/user/editusuario/{{#user}}{{id}}{{/user}}" method="post">
 
     <input type="text" name="name" placeholder="Nome" value="{{#user}}{{name}}{{/user}}" required>
     <br />
@@ -31,7 +31,7 @@
     <input type="text" name="email" placeholder="E-mail" value="{{#user}}{{email}}{{/user}}">
     <br />
     <br />
-    <input type="submit" value="Cadastrar">
+    <input type="submit" value="Alterar">
   </form>
 </fieldset>
 <ul>
@@ -46,12 +46,5 @@
 
 <hr />
 <a href="/">Home</a>
-{{#flashes}}
-{{#re}}
-<script>
-  document.location.reload(true);
-</script>
-{{/re}}
-{{/flashes}}
 
 {{>footer}}
