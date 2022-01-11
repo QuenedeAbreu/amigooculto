@@ -55,3 +55,21 @@ export const updateUser = async (req: Request, res: Response) => {
     res.redirect('/');
   }
 }
+
+export const deleteUser = async (req: Request, res: Response) => {
+  const { id } = req.params;
+
+  try {
+    await User.destroy({
+      where: {
+        id
+      }
+    });
+    req.flash('success', 'Usuário deletado com sucesso!');
+    res.redirect('/');
+  }
+  catch (error) {
+    console.log(error);
+    res.redirect('/');
+  }
+}

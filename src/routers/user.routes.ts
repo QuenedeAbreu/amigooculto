@@ -11,5 +11,6 @@ user.post('/novousuario', UserController.createUser);
 
 user.post('/editusuario/:id', UserController.updateUser);
 
+user.get('/delete/:id', UserController.deleteUser);
 
 export default user;
